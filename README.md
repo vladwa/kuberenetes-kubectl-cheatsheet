@@ -14,3 +14,9 @@ Master and Worker nodes ports
 | CronJob (deprecated) | batch/v1beta1 | `kubectl run --generator=cronjob/v1beta1` |
 | CronJob (deprecated) | batch/v2alpha1 | `kubectl run --generator=cronjob/v2alpha1` |
 
+#### Replica Sets
+
+| Description | **kubectl command** | 
+| List | `kubectl get rs` or `kubectl get replicaset` or `kubectl get replicasets`  |
+| List in all namespaces | `kubectl get rs --all-namespaces` or `kubectl get rs -A` |
+| Delete | `kubectl delete rs REPLICA_SET_NAME` |
