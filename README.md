@@ -57,6 +57,7 @@ Master and Worker nodes ports
 | ------------- | ------------- |
 | create | `kubectl create -f replicaset.yaml`|
 | List | `kubectl get rs` or `kubectl get replicaset` or `kubectl get replicasets` |
+| List replicasets with more information | `kubectl get rs -owide`|
 | List in all namespaces | `kubectl get rs --all-namespaces` or `kubectl get rs -A` |
 | Delete | `kubectl delete rs REPLICASET_NAME` or `kubectl delete -f replicaset.yaml`|
 | Get | `kubectl get rs REPLICASET_NAME` |
@@ -73,6 +74,7 @@ Master and Worker nodes ports
 | List deployments | `kubectl get deploy` or `kubectl get deployment` or `kubectl get deployments` |
 | List deployments in all namespaces | `kubectl get deploy --all-namespaces` or `kubectl get deploy -A` |
 | List deployments in particular namespace | `kubectl get deploy -n NAMESPACE` |
+| List deployments with more information | `kubectl get deploy -owide`|
 | Delete deployment | `kubectl delete deploy DEPLOYMENT_NAME` or `kubectl delete -f deployment.yaml`|
 | Get particular deployment | `kubectl get deploy DEPLOYMENT_NAME` |
 | Run deployment and expose it | `kubectl run DEPLOYMENT_NAME --image=nginx --port=80 --expose` |
@@ -87,10 +89,20 @@ Master and Worker nodes ports
 | Verbose Debug information/describe deployment | `kubectl describe deploy/DEPLOYMENT_NAME` |
 | Describe all deployments | `kubectl describe deployments` |
 | Watch deployment | `kubectl get deploy/DEPLOYMENT_NAME --watch` |
+
 ### DaemonSet
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `daemonsets`  | `ds`  | `apps`,`extensions` | `true` | `DaemonSet` | `[create delete deletecollection get list patch update watch]`
+
+| Description | kubectl command |
+| ------------- | ------------- |
+| create daemonset from file | `kubectl create -f daemonset.yaml`|
+| List daemonsets | `kubectl get ds` or `kubectl get daemonset` or `kubectl get daemonset` |
+| List daemonsets in all namespaces | `kubectl get ds --all-namespaces` or `kubectl get ds -A` |
+| List daemonsets with more information | `kubectl get ds -owide`|
+| Delete | `kubectl delete rs DAEMONSET_NAME` or `kubectl delete -f daemonset.yaml`|
+| Get particular daemonset | `kubectl get ds DAEMONSET_NAME` |
 
 ### CronJob
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
