@@ -1,9 +1,9 @@
-# cka-ckad-prep-notes
+#### cka-ckad-prep-notes
 
 Master and Worker nodes ports 
 ![alt text](ports.png)
 
-# You can create the following resources using kubectl run with the --generator flag
+#### You can create the following resources using kubectl run with the --generator flag
 
 | **Resource**  | **api group** | **kubectl command** |
 | ------------- | ------------- | ------- |
