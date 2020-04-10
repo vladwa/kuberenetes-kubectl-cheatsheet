@@ -14,7 +14,7 @@ Master and Worker nodes ports
 | CronJob (deprecated) | batch/v1beta1 | `kubectl run --generator=cronjob/v1beta1` |
 | CronJob (deprecated) | batch/v2alpha1 | `kubectl run --generator=cronjob/v2alpha1` |
 
-### Replica Sets (rs)
+### ReplicaSet 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `replicasets`  | `rs`  | `apps`,`extensions` | `true` | `ReplicaSet` | `[create delete deletecollection get list patch update watch]`
@@ -25,3 +25,24 @@ Master and Worker nodes ports
 | List in all namespaces | `kubectl get rs --all-namespaces` or `kubectl get rs -A` |
 | Delete | `kubectl delete rs REPLICASET_NAME` |
 | Get | `kubectl get rs REPLICASET_NAME` |
+
+### Deployment
+| NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
+| ------------- | ------------- | ------- | -------- | --------- | -------- |
+| `deployments`  | `deploy`  | `apps`,`extensions` | `true` | `Deployment` | `[create delete deletecollection get list patch update watch]`
+
+### DaemonSet
+| NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
+| ------------- | ------------- | ------- | -------- | --------- | -------- |
+| `daemonsets`  | `ds`  | `apps`,`extensions` | `true` | `DaemonSet` | `[create delete deletecollection get list patch update watch]`
+
+### CronJob
+| NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
+| ------------- | ------------- | ------- | -------- | --------- | -------- |
+| `cronjobs`  | `cj`  | `batch` | `true` | `CronJob` | `[create delete deletecollection get list patch update watch]`
+
+### Job
+| NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
+| ------------- | ------------- | ------- | -------- | --------- | -------- |
+| `jobs`  | `cj`  | `batch` | `true` | `Job` | `[create delete deletecollection get list patch update watch]`
+
