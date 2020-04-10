@@ -15,12 +15,12 @@ Master and Worker nodes ports
 | CronJob (deprecated) | batch/v2alpha1 | `kubectl run --generator=cronjob/v2alpha1` |
 
 #### Replica Sets (rs)
-| *NAME**  | *SHORTNAMES* | *APIGROUP* | **NAMESPACED** | **KIND** | **VERBS** |
+| NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `replicasets`  | `rs`  | `apps`,`extensions` | `true` | `ReplicaSet` | `[create delete deletecollection get list patch update watch]`
 
 
-| **verbs** | **kubectl command** |
+| Verbs | kubectl command |
 | ------------- | ------------- |
 | List | `kubectl get rs` or `kubectl get replicaset` or `kubectl get replicasets` |
 | List in all namespaces | `kubectl get rs --all-namespaces` or `kubectl get rs -A` |
