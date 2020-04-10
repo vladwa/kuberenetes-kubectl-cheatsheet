@@ -19,39 +19,41 @@ Master and Worker nodes ports
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `pods`  | `po`  | -  | `true` | `Pod` | `[create delete deletecollection get list patch update watch]`
 
-| Describtion | kubectl command |
+| Description | kubectl command |
 | ------------- | ------------- |
 | Create | `kubectl run nginx --generator=run-pod/v1 --image=nginx`|
 | Create in particular namespace | `kubectl run nginx --generator=run-pod/v1 --image=nginx -n NAMEPSPACE` |
 | Dry run,print object without creating it | `kubectl run POD_NAME --generator=run-pod/v1 --image=nginx --dry-run -o yaml` |
 | Create from File | `kubectl create -f pod.yaml` |
 | Create from File in particular namespace |  `kubectl create -f pod.yaml -n NAMEPSPACE` |
-| List | `kubectl get po` or `kubectl get pod` or `kubectl get pods` |
-| List in all namespaces | `kubectl get pods --all-namespaces` or `kubectl get pods -A` |
-| List with more information | `kubectl get pods -owide` |
-| List information in custom columns | `kubectl get pod POD_NAME -o custom-columns=CONTAINER:.spec.containers[0].name,IMAGE:.spec.containers[0].image` |
-| Verbose Debug information | `kubectl describe pod POD_NAME` |
+| List pods | `kubectl get po` or `kubectl get pod` or `kubectl get pods` |
+| List pods in all namespaces | `kubectl get pods --all-namespaces` or `kubectl get pods -A` |
+| List pods with more information | `kubectl get pods -owide` |
+| List pods information in custom columns | `kubectl get pod POD_NAME -o custom-columns=CONTAINER:.spec.containers[0].name,IMAGE:.spec.containers[0].image` |
+| Verbose Debug information/describe pod | `kubectl describe pod POD_NAME` |
 | Logs | `kubectl logs POD_NAME` |
 | Logs (multi-container case) | `kubectl logs POD_NAME -c CONTAINER_NAME` |
-| Tail logs | `kubectl logs -f POD_NAME` | 
-| Tail logs (multi-container case) | `kubectl logs -f POD_NAME -c CONTAINER_NAME` | 
-| Delete | `kubectl delete pod POD_NAME` or `kubectl delete -f pod.yaml` or `kubectl delete pod/POD_NAME` |
-| Delete in particular namespace | `kubectl delete pod POD_NAME -n NAMESPACE` |
-| Get  | `kubectl get pod POD_NAME` |
-| Watch  | `kubectl get pod POD_NAME --watch` |
-| Patch | `kubectl patch pod valid-pod -p '{"spec":{"containers":[{"name":"kubernetes-serve-hostname"}]}}'` |
+| Tail pod logs | `kubectl logs -f POD_NAME` | 
+| Tail pods logs (multi-container case) | `kubectl logs -f POD_NAME -c CONTAINER_NAME` | 
+| Delete pod | `kubectl delete pod POD_NAME` or `kubectl delete -f pod.yaml` or `kubectl delete pod/POD_NAME` |
+| Delete pod in particular namespace | `kubectl delete pod POD_NAME -n NAMESPACE` |
+| Get pod | `kubectl get pod POD_NAME` |
+| Watch pod | `kubectl get pod POD_NAME --watch` |
+| Patch pod | `kubectl patch pod valid-pod -p '{"spec":{"containers":[{"name":"kubernetes-serve-hostname"}]}}'` |
 | Create and wrtie its spec to file | `kubectl run POD_NAME --image=nginx --restart=Never --dry-run -o yaml > pod.yaml`
-| List in Json output format | `kubectl get pods -o json` |
-| List in YAML output format | `kubectl get pods -o yaml` |
-| Run command in existing | `kubectl exec POD_NAME -- ls /` |
+| List pod in Json output format | `kubectl get pods -o json` |
+| List pod in YAML output format | `kubectl get pods -o yaml` |
+| Run command in existing pod | `kubectl exec POD_NAME -- ls /` |
 | Run command in existing pod (multi-container case) | `kubectl exec POD_NAME -c CONTAINER_NAME -- ls /` |
+| Exec to pod | `kubectl exec -it POD_NAME bash` |
+| List Kubernetes critical pods | `kubectl get pods -n kube-system` |
 
 ### ReplicaSet 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `replicasets`  | `rs`  | `apps`,`extensions` | `true` | `ReplicaSet` | `[create delete deletecollection get list patch update watch]`
 
-| Describtion | kubectl command |
+| Description | kubectl command |
 | ------------- | ------------- |
 | create | `kubectl create -f replicaset.yaml`|
 | List | `kubectl get rs` or `kubectl get replicaset` or `kubectl get replicasets` |
@@ -59,11 +61,32 @@ Master and Worker nodes ports
 | Delete | `kubectl delete rs REPLICASET_NAME` or `kubectl delete -f replicaset.yaml`|
 | Get | `kubectl get rs REPLICASET_NAME` |
 
-### Deployment
+### Deployment,Scale & Rolling Upgrades
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `deployments`  | `deploy`  | `apps`,`extensions` | `true` | `Deployment` | `[create delete deletecollection get list patch update watch]`
 
+| Description | kubectl command |
+| ------------- | ------------- |
+| Create Deployment | `kubectl create deployment DEPLOYMENT_NAME --image=busybox` |
+| Run deployment with 2 replicas | `kubectl run POD_NAME --image=nginx --replicas=2 --port=80`|
+| List deployments | `kubectl get deploy` or `kubectl get deployment` or `kubectl get deployments` |
+| List deployments in all namespaces | `kubectl get deploy --all-namespaces` or `kubectl get deploy -A` |
+| List deployments in particular namespace | `kubectl get deploy -n NAMESPACE` |
+| Delete deployment | `kubectl delete deploy DEPLOYMENT_NAME` or `kubectl delete -f deployment.yaml`|
+| Get particular deployment | `kubectl get deploy DEPLOYMENT_NAME` |
+| Run deployment and expose it | `kubectl run DEPLOYMENT_NAME --image=nginx --port=80 --expose` |
+| Update the nginx Pods to use the nginx:1.9.1 image instead of the nginx:1.7.9 image | `kubectl set image deployment/nginx-deployment nginx=nginx:1.9.1 --record` |
+| Edit the Deployment | `kubectl edit deploy/DEPLOYMENT_NAME` |
+| Deployment rollout status | `kubectl rollout status deploy/DEPLOYMENT_NAME` |
+| Deployment rollout history | `kubectl rollout history deploy/DEPLOYMENT_NAME` |
+| Rolling back deployment to previous version| `kubectl rollout undo deploy/DEPLOYMENT_NAME` |
+| Scaling deployment  | `kubectl scale --replicas=2 deploy/DEPLOYMENT_NAME` |
+| Pausing deployment | `kubectl rollout pause deploy/DEPLOYMENT_NAME` |
+| Resuming deployment | `kubectl rollout resume deploy/DEPLOYMENT_NAME` |
+| Verbose Debug information/describe deployment | `kubectl describe deploy/DEPLOYMENT_NAME` |
+| Describe all deployments | `kubectl describe deployments` |
+| Watch deployment | `kubectl get deploy/DEPLOYMENT_NAME --watch` |
 ### DaemonSet
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
