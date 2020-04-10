@@ -14,7 +14,7 @@ Master and Worker nodes ports
 | CronJob (deprecated) | batch/v1beta1 | `kubectl run --generator=cronjob/v1beta1` |
 | CronJob (deprecated) | batch/v2alpha1 | `kubectl run --generator=cronjob/v2alpha1` |
 
-#### Replica Sets (rs)
+### Replica Sets (rs)
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `replicasets`  | `rs`  | `apps`,`extensions` | `true` | `ReplicaSet` | `[create delete deletecollection get list patch update watch]`
