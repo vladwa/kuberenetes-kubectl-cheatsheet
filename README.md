@@ -16,6 +16,10 @@ Master and Worker nodes ports
 
 #### Replica Sets (rs)
 
+| **Resource**  | **api group** | **kubectl command** |
+| ------------- | ------------- | ------- |
+| Pod  | v1  | `kubectl run --generator=run-pod/v1` |
+
 | **verbs** | **kubectl command** |
 | ------------- | ------------- | ------- |
 | List | `kubectl get rs` or `kubectl get replicaset` or `kubectl get replicasets` |
