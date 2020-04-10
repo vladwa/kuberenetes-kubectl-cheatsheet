@@ -17,6 +17,6 @@ Master and Worker nodes ports
 #### Replica Sets
 
 | Description | **kubectl command** | 
-| List | `kubectl get rs` or `kubectl get replicaset` or `kubectl get replicasets`  |
+| List | `kubectl get rs` or `kubectl get replicaset` or `kubectl get replicasets` |
 | List in all namespaces | `kubectl get rs --all-namespaces` or `kubectl get rs -A` |
 | Delete | `kubectl delete rs REPLICA_SET_NAME` |
