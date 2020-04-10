@@ -23,18 +23,28 @@ Master and Worker nodes ports
 | ------------- | ------------- |
 | Create | `kubectl run nginx --generator=run-pod/v1 --image=nginx`|
 | Create in particular namespace | `kubectl run nginx --generator=run-pod/v1 --image=nginx -n NAMEPSPACE` |
+| Dry run,print object without creating it | `kubectl run POD_NAME --generator=run-pod/v1 --image=nginx --dry-run -o yaml` |
 | Create from File | `kubectl create -f pod.yaml` |
-| Create from File in particular namespace |  `kubectl create -f pod.yaml -n NAMEPSPACE`
+| Create from File in particular namespace |  `kubectl create -f pod.yaml -n NAMEPSPACE` |
 | List | `kubectl get po` or `kubectl get pod` or `kubectl get pods` |
 | List in all namespaces | `kubectl get pods --all-namespaces` or `kubectl get pods -A` |
-| Details | `kubectl describe pod POD_NAME` |
-| logs | `kubectl logs POD_NAME` |
-| Tail Pod logs | `kubectl logs -f POD_NAME` | 
-| Delete | `kubectl delete pod POD_NAME` or `kubectl delete -f pod.yaml`|
+| List with more information | `kubectl get pods -owide` |
+| List information in custom columns | `kubectl get pod POD_NAME -o custom-columns=CONTAINER:.spec.containers[0].name,IMAGE:.spec.containers[0].image` |
+| Verbose Debug information | `kubectl describe pod POD_NAME` |
+| Logs | `kubectl logs POD_NAME` |
+| Logs (multi-container case) | `kubectl logs POD_NAME -c CONTAINER_NAME` |
+| Tail logs | `kubectl logs -f POD_NAME` | 
+| Tail logs (multi-container case) | `kubectl logs -f POD_NAME -c CONTAINER_NAME` | 
+| Delete | `kubectl delete pod POD_NAME` or `kubectl delete -f pod.yaml` or `kubectl delete pod/POD_NAME` |
+| Delete in particular namespace | `kubectl delete pod POD_NAME -n NAMESPACE` |
 | Get  | `kubectl get pod POD_NAME` |
 | Watch  | `kubectl get pod POD_NAME --watch` |
 | Patch | `kubectl patch pod valid-pod -p '{"spec":{"containers":[{"name":"kubernetes-serve-hostname"}]}}'` |
-
+| Create and wrtie its spec to file | `kubectl run POD_NAME --image=nginx --restart=Never --dry-run -o yaml > pod.yaml`
+| List in Json output format | `kubectl get pods -o json` |
+| List in YAML output format | `kubectl get pods -o yaml` |
+| Run command in existing | `kubectl exec POD_NAME -- ls /` |
+| Run command in existing pod (multi-container case) | `kubectl exec POD_NAME -c CONTAINER_NAME -- ls /` |
 
 ### ReplicaSet 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
