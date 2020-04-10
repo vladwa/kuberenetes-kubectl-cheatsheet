@@ -19,9 +19,9 @@ Master and Worker nodes ports
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `replicasets`  | `rs`  | `apps`,`extensions` | `true` | `ReplicaSet` | `[create delete deletecollection get list patch update watch]`
 
-
 | Verbs | kubectl command |
 | ------------- | ------------- |
 | List | `kubectl get rs` or `kubectl get replicaset` or `kubectl get replicasets` |
 | List in all namespaces | `kubectl get rs --all-namespaces` or `kubectl get rs -A` |
-| Delete | `kubectl delete rs REPLICA_SET_NAME` |
+| Delete | `kubectl delete rs REPLICASET_NAME` |
+| Get | `kubectl get rs REPLICASET_NAME` |
