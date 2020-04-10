@@ -16,7 +16,7 @@ Master and Worker nodes ports
 
 #### Replica Sets (rs)
 | **NAME**  | **SHORTNAMES** | **APIGROUP** | **NAMESPACED** | **KIND** | **VERBS** |
-| ------------- | ------------- | ------- |
+| ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `replicasets`  | `rs`  | `apps`,`extensions` | `true` | `ReplicaSet` | `[create delete deletecollection get list patch update watch]`
 
 
