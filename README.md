@@ -3,21 +3,21 @@
 
 #### cka-ckad-prep-notes
 
-** Kubernetes Components
-*** Control Plane Components (Master Nodes)
-| Component Name                    | Summary                                                                                                |
-|-------------------------|--------------------------------------------------------------------------------------------------------|
-| kube-apiserver          | `Exposes the Kubernetes API from master nodes.The API server is the front end for the Kubernetes control plane. Can run several instances of kube-apiserver and balance traffic between those instances` |
-| etcd                  | `Consistent and highly-available key value store used as Kubernetes’ backing store for all cluster data` |
-| kube-scheduler          | `Component that watches for newly created Pods with no assigned node, and selects a node for them to run on` |
-| kube-controller-manager| `Component that runs controller processesnode. Controllers include : Node Controller, Replication Controller, Endpoints Controller, Service Account & Token Controllers`|
+#### Kubernetes Components
+### Control Plane Components (Master Nodes)
+| Component Name                    | Summary | Runs As | 
+|-------------------------|--------------------------------------------------------------------------------------------------------| ----------- | 
+| kube-apiserver          | `Exposes the Kubernetes API from master nodes.The API server is the front end for the Kubernetes control plane. Can run several instances of kube-apiserver and balance traffic between those instances` | `Static Pod` |
+| etcd                  | `Consistent and highly-available key value store used as Kubernetes’ backing store for all cluster data` | `Static Pod` or `Systemd service` |
+| kube-scheduler          | `Component that watches for newly created Pods with no assigned node, and selects a node for them to run on` | `Static Pod` |
+| kube-controller-manager| `Component that runs controller processesnode. Controllers include : Node Controller, Replication Controller, Endpoints Controller, Service Account & Token Controllers`| `Static Pod` |
 
-*** Node Components(Worker Nodes)
-| Component Name              | Summary                                                                                   |
+### Node Components(Worker Nodes)
+| Component Name              | Summary | Runs As |
 |-------------------|-------------------------------------------------------------------------------------------|
-| kubelet           | `An agent that runs on each node in the cluster. It makes sure that containers are running in a Pod` |
-| kube-proxy        | `kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept` |
-| Container Runtime | `Is the software that is responsible for running containers. Kubernetes supported runtimes: Docker, rkt, runc and any [[https://github.com/opencontainers/runtime-spec][OCI runtime-spec]] implementation` |
+| kubelet           | `An agent that runs on each node in the cluster. It makes sure that containers are running in a Pod` | `System process` |
+| kube-proxy        | `kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept` | `Daemonset` |
+| Container Runtime | `Is the software that is responsible for running containers. Kubernetes supported runtimes: Docker, rkt, runc and any [[https://github.com/opencontainers/runtime-spec][OCI runtime-spec]] implementation` | `Systemd service` |
 
 Master and Worker nodes ports 
 ![alt text](ports.png)
