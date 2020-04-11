@@ -6,7 +6,7 @@
 ** Components on Master and Worker Nodes
 *** Master Nodes
 | Name                    | Summary                                                                                                |
-|-------------------------+--------------------------------------------------------------------------------------------------------|
+|-------------------------|--------------------------------------------------------------------------------------------------------|
 | kube-apiserver          | exposes the Kubernetes API from master nodes                                                           |
 | etcd                  | reliable data store for all k8s cluster data                                                           |
 | kube-scheduler          | schedule pods to run on selected nodes                                                                 |
@@ -14,7 +14,7 @@
 
 *** Worker Nodes
 | Name              | Summary                                                                                   |
-|-------------------+-------------------------------------------------------------------------------------------|
+|-------------------|-------------------------------------------------------------------------------------------|
 | kubelet           | makes sure that containers are running in a pod                                           |
 | kube-proxy        | perform connection forwarding                                                             |
 | Container Runtime | Kubernetes supported runtimes: Docker, rkt, runc and any [[https://github.com/opencontainers/runtime-spec][OCI runtime-spec]] implementation. |
