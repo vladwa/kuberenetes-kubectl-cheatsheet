@@ -14,6 +14,25 @@ Master and Worker nodes ports
 | CronJob (deprecated) | batch/v1beta1 | `kubectl run --generator=cronjob/v1beta1` |
 | CronJob (deprecated) | batch/v2alpha1 | `kubectl run --generator=cronjob/v2alpha1` |
 
+#### Kubernetes,Docker conf and logs
+
+| Name                      | Comment                                                                   |
+|---------------------------+---------------------------------------------------------------------------|
+| Config folder             | `/etc/kubernetes/`                                                        |
+| Certificate files         | =/etc/kubernetes/pki/=                                                    |
+| Credentials to API server | =/etc/kubernetes/kubelet.conf=                                            |
+| Superuser credentials     | =/etc/kubernetes/admin.conf=                                              |
+| kubectl config file       | =~/.kube/config=                                                          |
+| Kubernets working dir     | =/var/lib/kubelet/=                                                       |
+| Docker working dir        | =/var/lib/docker/=, =/var/log/containers/=                                |
+| Etcd working dir          | =/var/lib/etcd/=                                                          |
+| Network cni               | =/etc/cni/net.d/=                                                         |
+| Log files                 | =/var/log/pods/=                                                          |
+| log in worker node        | =/var/log/kubelet.log=, =/var/log/kube-proxy.log=                         |
+| log in master node        | =kube-apiserver.log=, =kube-scheduler.log=, =kube-controller-manager.log= |
+| Env                       | =/etc/systemd/system/kubelet.service.d/10-kubeadm.conf=                   |
+| Env                       | export KUBECONFIG=/etc/kubernetes/admin.conf                              |
+
 ### Pod 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
