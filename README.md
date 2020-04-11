@@ -19,7 +19,7 @@ Master and Worker nodes ports
 | Name                      | Comment                                                                   |
 |---------------------------+---------------------------------------------------------------------------|
 | Config folder             | `/etc/kubernetes/`                                                        |
-| Manifests dif             | `/etc/kubernetes/manifests` |
+| Manifests dif             | `/etc/kubernetes/manifests`                                               |
 | Certificate files         | `/etc/kubernetes/pki/`                                                   |
 | Credentials to API server | `/etc/kubernetes/kubelet.conf`                                            |
 | Superuser credentials     | `/etc/kubernetes/admin.conf`                                             |
@@ -30,12 +30,12 @@ Master and Worker nodes ports
 | Network cni               | `/etc/cni/net.d/`                                                         |
 | Log files                 | `/var/log/pods/`                                                          |
 | Kubelet logs              | `/var/log/messages`, `/var/log/pods/kube-system_kube-proxy*/kube-proxy/*.log`|
-| Kube-proxy                | `/var/log/pods/kube-system_kube-proxy*/kube-proxy/*.log` | 
-| Kube-api-server           | `/var/log/pods/kube-system_kube-apiserver*/kube-proxy/*.log` |
-| Kube-controller           | `/var/log/pods/kube-system_kube-controller*/kube-proxy/*.log` |
-| Kube-scheduller           | `/var/log/pods/kube-system_kube-scheduler*/kube-scheduler/*.log` |
-| Env                       | `/etc/systemd/system/kubelet.service.d/10-kubeadm.conf=                   |
-| Env                       | `export KUBECONFIG=/etc/kubernetes/admin.conf                              |
+| Kube-proxy                | `/var/log/pods/kube-system_kube-proxy*/kube-proxy/*.log`                  | 
+| Kube-api-server           | `/var/log/pods/kube-system_kube-apiserver*/kube-proxy/*.log`              |
+| Kube-controller           | `/var/log/pods/kube-system_kube-controller*/kube-proxy/*.log`             |
+| Kube-scheduller           | `/var/log/pods/kube-system_kube-scheduler*/kube-scheduler/*.log`          |
+| Env                       | `/etc/systemd/system/kubelet.service.d/10-kubeadm.conf`                   |
+| Env                       | `export KUBECONFIG=/etc/kubernetes/admin.conf`                            |
 
 ### Pod 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
