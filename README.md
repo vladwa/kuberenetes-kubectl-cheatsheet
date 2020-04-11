@@ -36,6 +36,7 @@ Master and Worker nodes ports
 | Kube-scheduller           | `/var/log/pods/kube-system_kube-scheduler*/kube-scheduler/*.log`          |
 | Env                       | `/etc/systemd/system/kubelet.service.d/10-kubeadm.conf`                   |
 | Env                       | `export KUBECONFIG=/etc/kubernetes/admin.conf`                            |
+| Audit logs                | `/var/log/audit/audit.log` | 
 
 ### Pod 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
