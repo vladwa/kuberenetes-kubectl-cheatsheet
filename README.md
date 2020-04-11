@@ -33,9 +33,9 @@ Master and Worker nodes ports
 | CronJob (deprecated)                   | batch/v1beta1 | `kubectl run --generator=cronjob/v1beta1` |
 | CronJob (deprecated)                   | batch/v2alpha1 | `kubectl run --generator=cronjob/v2alpha1` |
 
-### Configuration,Logs and Service details of Kubernetes,Docker
+### Configuration and Logs details of Kubernetes,Docker
 
-| Name                      | Comment                                                                   |
+| Description               | Folder or File location                                                                   |
 |-------------------------- | ---------------------------------------------------------------------------|
 | Config folder             | `/etc/kubernetes/`                                                        |
 | Manifests dif             | `/etc/kubernetes/manifests`                                               |
@@ -56,6 +56,18 @@ Master and Worker nodes ports
 | Env                       | `/etc/systemd/system/kubelet.service.d/10-kubeadm.conf`                   |
 | Env                       | `export KUBECONFIG=/etc/kubernetes/admin.conf`                            |
 | Audit logs                | `/var/log/audit/audit.log` | 
+| Kubelet env file          | `/etc/kubernetes/kubelet.env` |
+| kubelet.service           | `/etc/systemd/system/kubelet.service` |
+| docker.service            | `/etc/systemd/system/docker.service` |
+
+### Kubelet and Docker commands 
+| Description | Command or File location|
+| ------------ | -------------- |
+| Check Kubelet status | `service kubelet status` or `systemctl status kubelet.service` |
+| Restart Kubelet | `service kubelet restart` or `systemctl restart kubelet.service` |
+| Stop Kubelet | `service kubelet stop` or `systemctl stop kubelet.service` |
+| Tail Kubelet logs | `journalctl -u kubelet.service -f` |
+| Check dockerd status | |
 
 ### Pod 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
