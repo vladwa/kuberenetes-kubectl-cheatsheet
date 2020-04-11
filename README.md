@@ -14,7 +14,7 @@
 
 #### Node Components(Worker Nodes)
 | Component Name              | Summary | Runs As |
-|-------------------|-------------------------------------------------------------------------------------------|
+|-------------------|-------------------------------------------------------------------------------------------| ---- |
 | kubelet           | `An agent that runs on each node in the cluster. It makes sure that containers are running in a Pod` | `System process` |
 | kube-proxy        | `kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept` | `Daemonset` |
 | Container Runtime | `Is the software that is responsible for running containers. Kubernetes supported runtimes: Docker, rkt, runc and any [[https://github.com/opencontainers/runtime-spec][OCI runtime-spec]] implementation` | `Systemd service` |
