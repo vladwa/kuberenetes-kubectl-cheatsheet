@@ -140,20 +140,45 @@ Master and Worker nodes ports
 
 | Verb Description | kubectl command |
 | ------------- | ------------- |
-| create daemonset from file | `kubectl create -f daemonset.yaml`|
 | List daemonsets | `kubectl get ds` or `kubectl get daemonset` or `kubectl get daemonset` |
 | List daemonsets in all namespaces | `kubectl get ds --all-namespaces` or `kubectl get ds -A` |
 | List daemonsets with more information | `kubectl get ds -owide`|
 | Delete | `kubectl delete rs DAEMONSET_NAME` or `kubectl delete -f daemonset.yaml`|
 | Get particular daemonset | `kubectl get ds DAEMONSET_NAME` |
+| Verbose Debug information/describe Daemonset | `kubectl describe ds/DAEMONSET_NAME` |
+
+### Job
+| NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
+| ------------- | ------------- | ------- | -------- | --------- | -------- |
+| `jobs`  |  -   | `batch` | `true` | `Job` | `[create delete deletecollection get list patch update watch]` |
+
+| Verb Description | kubectl command |
+| ------------- | ------------- |
+| Create | `kubectl create job my-job --image=busybox`|
+| Create a job with command | `kubectl create job my-job --image=busybox -- date` |
+| Create a job from a CronJob named "a-cronjob" | `kubectl create job test-job --from=cronjob/a-cronjob`|
+| List jobs | `kubectl get jobs` or `kubectl get job` |
+| List jobs in all namespaces | `kubectl get jobs --all-namespaces` or `kubectl get jobs -A` |
+| List with more information | `kubectl get job -owide`|
+| Delete | `kubectl delete jobs JOB_NAME` or `kubectl delete -f job.yaml`|
+| Get particular cronjob | `kubectl get cj cronjob_NAME` |
+| Verbose Debug information/describe job | `kubectl describe jobs/CRRONJOB_NAME` |
+
 
 ### CronJob
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `cronjobs`  | `cj`  | `batch` | `true` | `CronJob` | `[create delete deletecollection get list patch update watch]`
 
-### Job
-| NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
-| ------------- | ------------- | ------- | -------- | --------- | -------- |
-| `jobs`  | `cj`  | `batch` | `true` | `Job` | `[create delete deletecollection get list patch update watch]` |
+| Verb Description | kubectl command |
+| ------------- | ------------- |
+| Create with schedule | `kubectl create cronjob CRONJOB_NAME --image=busybox --schedule="*/1 * * * *"`|
+| List | `kubectl get cj` or `kubectl get cronjob` or `kubectl get cronjobs` |
+| List in all namespaces | `kubectl get cj --all-namespaces` or `kubectl get cj -A` |
+| List with more information | `kubectl get cj -owide`|
+| Delete | `kubectl delete cj CRONJOB_NAME` or `kubectl delete -f cronjob.yaml`|
+| Get particular cronjob | `kubectl get cj cronjob_NAME` |
+| Verbose Debug information/describe cronjob | `kubectl describe cj/CRRONJOB_NAME` |
+
+
 
