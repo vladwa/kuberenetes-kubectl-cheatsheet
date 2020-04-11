@@ -1,3 +1,8 @@
+#+BEGIN_HTML
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+#+END_HTML
+
 #### cka-ckad-prep-notes
 
 Master and Worker nodes ports 
