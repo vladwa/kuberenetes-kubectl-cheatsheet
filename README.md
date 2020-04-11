@@ -17,7 +17,7 @@ Master and Worker nodes ports
 #### Configuration,Logs and Service details of Kubernetes,Docker
 
 | Name                      | Comment                                                                   |
-|---------------------------+---------------------------------------------------------------------------|
+|-------------------------- | ---------------------------------------------------------------------------|
 | Config folder             | `/etc/kubernetes/`                                                        |
 | Manifests dif             | `/etc/kubernetes/manifests`                                               |
 | Certificate files         | `/etc/kubernetes/pki/`                                                   |
