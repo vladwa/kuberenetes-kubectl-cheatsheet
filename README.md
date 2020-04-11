@@ -17,7 +17,7 @@ Master and Worker nodes ports
 ### Pod 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
-| `pods`  | `po`  | -  | `true` | `Pod` | `[create delete deletecollection get list patch update watch]`
+| `pods`  | `po`  | -  | `true` | `Pod` | `[create delete deletecollection get list patch update watch]` |
 
 | Description | kubectl command |
 | ------------- | ------------- |
@@ -51,7 +51,7 @@ Master and Worker nodes ports
 ### ReplicaSet 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
-| `replicasets`  | `rs`  | `apps`,`extensions` | `true` | `ReplicaSet` | `[create delete deletecollection get list patch update watch]`
+| `replicasets`  | `rs`  | `apps`,`extensions` | `true` | `ReplicaSet` | `[create delete deletecollection get list patch update watch]` |
 
 | Description | kubectl command |
 | ------------- | ------------- |
@@ -65,7 +65,7 @@ Master and Worker nodes ports
 ### Deployment,Scale & Rolling Upgrades
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
-| `deployments`  | `deploy`  | `apps`,`extensions` | `true` | `Deployment` | `[create delete deletecollection get list patch update watch]`
+| `deployments`  | `deploy`  | `apps`,`extensions` | `true` | `Deployment` | `[create delete deletecollection get list patch update watch]` |
 
 | Description | kubectl command |
 | ------------- | ------------- |
@@ -93,7 +93,7 @@ Master and Worker nodes ports
 ### DaemonSet
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
-| `daemonsets`  | `ds`  | `apps`,`extensions` | `true` | `DaemonSet` | `[create delete deletecollection get list patch update watch]`
+| `daemonsets`  | `ds`  | `apps`,`extensions` | `true` | `DaemonSet` | `[create delete deletecollection get list patch update watch]` |
 
 | Description | kubectl command |
 | ------------- | ------------- |
@@ -112,5 +112,5 @@ Master and Worker nodes ports
 ### Job
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
-| `jobs`  | `cj`  | `batch` | `true` | `Job` | `[create delete deletecollection get list patch update watch]`
+| `jobs`  | `cj`  | `batch` | `true` | `Job` | `[create delete deletecollection get list patch update watch]` |
 
