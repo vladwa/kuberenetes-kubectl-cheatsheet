@@ -19,7 +19,7 @@ Master and Worker nodes ports
 | Name                      | Comment                                                                   |
 |---------------------------+---------------------------------------------------------------------------|
 | Config folder             | `/etc/kubernetes/`                                                        |
-| Manifests dif             | `/etc/kubernetes/manifests`
+| Manifests dif             | `/etc/kubernetes/manifests` |
 | Certificate files         | `/etc/kubernetes/pki/`                                                   |
 | Credentials to API server | `/etc/kubernetes/kubelet.conf`                                            |
 | Superuser credentials     | `/etc/kubernetes/admin.conf`                                             |
@@ -76,7 +76,7 @@ Master and Worker nodes ports
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `replicasets`  | `rs`  | `apps`,`extensions` | `true` | `ReplicaSet` | `[create delete deletecollection get list patch update watch]` |
 
-| Description | kubectl command |
+| Verb Description | kubectl command |
 | ------------- | ------------- |
 | create | `kubectl create -f replicaset.yaml`|
 | List | `kubectl get rs` or `kubectl get replicaset` or `kubectl get replicasets` |
@@ -90,7 +90,7 @@ Master and Worker nodes ports
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `deployments`  | `deploy`  | `apps`,`extensions` | `true` | `Deployment` | `[create delete deletecollection get list patch update watch]` |
 
-| Description | kubectl command |
+| Verb Description | kubectl command |
 | ------------- | ------------- |
 | Create Deployment | `kubectl create deployment DEPLOYMENT_NAME --image=busybox` |
 | Run deployment with 2 replicas | `kubectl run POD_NAME --image=nginx --replicas=2 --port=80`|
@@ -118,7 +118,7 @@ Master and Worker nodes ports
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `daemonsets`  | `ds`  | `apps`,`extensions` | `true` | `DaemonSet` | `[create delete deletecollection get list patch update watch]` |
 
-| Description | kubectl command |
+| Verb Description | kubectl command |
 | ------------- | ------------- |
 | create daemonset from file | `kubectl create -f daemonset.yaml`|
 | List daemonsets | `kubectl get ds` or `kubectl get daemonset` or `kubectl get daemonset` |
