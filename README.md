@@ -6,32 +6,36 @@ Master and Worker nodes ports
 #### You can create the following resources using kubectl run with the --generator flag
 
 | **Resource**  | **api group** | **kubectl command** |
-| ------------- | ------------- | ------- |
-| Pod  | v1  | `kubectl run --generator=run-pod/v1` |
-| Replication controller (deprecated)  | v1 | `kubectl run --generator=run/v1` |
+| -------------                          | ------------- | ------- |
+| Pod                                    | v1       | `kubectl run --generator=run-pod/v1` |
+| Replication controller (deprecated)    | v1 | `kubectl run --generator=run/v1` |
 | Deployment (deprecated) | apps/v1beta1 | `kubectl run --generator=deployment/apps.v1beta1` |
-| Job (deprecated) | batch/v1 | `kubectl run --generator=job/v1` |
-| CronJob (deprecated) | batch/v1beta1 | `kubectl run --generator=cronjob/v1beta1` |
-| CronJob (deprecated) | batch/v2alpha1 | `kubectl run --generator=cronjob/v2alpha1` |
+| Job (deprecated)                       | batch/v1 | `kubectl run --generator=job/v1` |
+| CronJob (deprecated)                   | batch/v1beta1 | `kubectl run --generator=cronjob/v1beta1` |
+| CronJob (deprecated)                   | batch/v2alpha1 | `kubectl run --generator=cronjob/v2alpha1` |
 
-#### Kubernetes,Docker conf and logs
+#### Configuration,Logs and Service details of Kubernetes,Docker
 
 | Name                      | Comment                                                                   |
 |---------------------------+---------------------------------------------------------------------------|
 | Config folder             | `/etc/kubernetes/`                                                        |
-| Certificate files         | =/etc/kubernetes/pki/=                                                    |
-| Credentials to API server | =/etc/kubernetes/kubelet.conf=                                            |
-| Superuser credentials     | =/etc/kubernetes/admin.conf=                                              |
-| kubectl config file       | =~/.kube/config=                                                          |
-| Kubernets working dir     | =/var/lib/kubelet/=                                                       |
-| Docker working dir        | =/var/lib/docker/=, =/var/log/containers/=                                |
-| Etcd working dir          | =/var/lib/etcd/=                                                          |
-| Network cni               | =/etc/cni/net.d/=                                                         |
-| Log files                 | =/var/log/pods/=                                                          |
-| log in worker node        | =/var/log/kubelet.log=, =/var/log/kube-proxy.log=                         |
-| log in master node        | =kube-apiserver.log=, =kube-scheduler.log=, =kube-controller-manager.log= |
-| Env                       | =/etc/systemd/system/kubelet.service.d/10-kubeadm.conf=                   |
-| Env                       | export KUBECONFIG=/etc/kubernetes/admin.conf                              |
+| Manifests dif             | `/etc/kubernetes/manifests`
+| Certificate files         | `/etc/kubernetes/pki/`                                                   |
+| Credentials to API server | `/etc/kubernetes/kubelet.conf`                                            |
+| Superuser credentials     | `/etc/kubernetes/admin.conf`                                             |
+| kubectl config file       | `~/.kube/config`                                                         |
+| Kubernets working dir     | `/var/lib/kubelet/`                                                      |
+| Docker working dir        | `/var/lib/docker/`, `/var/log/containers/`                                |
+| Etcd working dir          | `/var/lib/etcd/`                                                          |
+| Network cni               | `/etc/cni/net.d/`                                                         |
+| Log files                 | `/var/log/pods/`                                                          |
+| Kubelet logs              | `/var/log/messages`, `/var/log/pods/kube-system_kube-proxy*/kube-proxy/*.log`|
+| Kube-proxy                | `/var/log/pods/kube-system_kube-proxy*/kube-proxy/*.log` | 
+| Kube-api-server           | `/var/log/pods/kube-system_kube-apiserver*/kube-proxy/*.log` |
+| Kube-controller           | `/var/log/pods/kube-system_kube-controller*/kube-proxy/*.log` |
+| Kube-scheduller           | `/var/log/pods/kube-system_kube-scheduler*/kube-scheduler/*.log` |
+| Env                       | `/etc/systemd/system/kubelet.service.d/10-kubeadm.conf=                   |
+| Env                       | `export KUBECONFIG=/etc/kubernetes/admin.conf                              |
 
 ### Pod 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
