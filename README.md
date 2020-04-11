@@ -3,8 +3,8 @@
 
 #### cka-ckad-prep-notes
 
-#### Kubernetes Components
-### Control Plane Components (Master Nodes)
+### Kubernetes Components
+#### Control Plane Components (Master Nodes)
 | Component Name                    | Summary | Runs As | 
 |-------------------------|--------------------------------------------------------------------------------------------------------| ----------- | 
 | kube-apiserver          | `Exposes the Kubernetes API from master nodes.The API server is the front end for the Kubernetes control plane. Can run several instances of kube-apiserver and balance traffic between those instances` | `Static Pod` |
@@ -12,7 +12,7 @@
 | kube-scheduler          | `Component that watches for newly created Pods with no assigned node, and selects a node for them to run on` | `Static Pod` |
 | kube-controller-manager| `Component that runs controller processesnode. Controllers include : Node Controller, Replication Controller, Endpoints Controller, Service Account & Token Controllers`| `Static Pod` |
 
-### Node Components(Worker Nodes)
+#### Node Components(Worker Nodes)
 | Component Name              | Summary | Runs As |
 |-------------------|-------------------------------------------------------------------------------------------|
 | kubelet           | `An agent that runs on each node in the cluster. It makes sure that containers are running in a Pod` | `System process` |
@@ -22,7 +22,7 @@
 Master and Worker nodes ports 
 ![alt text](ports.png)
 
-#### You can create the following resources using kubectl run with the --generator flag
+### You can create the following resources using kubectl run with the --generator flag
 
 | **Resource**  | **api group** | **kubectl command** |
 | -------------                          | ------------- | ------- |
@@ -33,7 +33,7 @@ Master and Worker nodes ports
 | CronJob (deprecated)                   | batch/v1beta1 | `kubectl run --generator=cronjob/v1beta1` |
 | CronJob (deprecated)                   | batch/v2alpha1 | `kubectl run --generator=cronjob/v2alpha1` |
 
-#### Configuration,Logs and Service details of Kubernetes,Docker
+### Configuration,Logs and Service details of Kubernetes,Docker
 
 | Name                      | Comment                                                                   |
 |-------------------------- | ---------------------------------------------------------------------------|
