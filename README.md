@@ -78,7 +78,7 @@ Master and Worker nodes ports
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `pods`  | `po`  | -  | `true` | `Pod` | `[create delete deletecollection get list patch update watch]` |
 
-| Description | kubectl command |
+| Description | Kubectl Command |
 | ------------- | ------------- |
 | Create | `kubectl run nginx --generator=run-pod/v1 --image=nginx`|
 | Create in particular namespace | `kubectl run nginx --generator=run-pod/v1 --image=nginx -n NAMEPSPACE` |
@@ -114,7 +114,7 @@ Master and Worker nodes ports
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `replicasets`  | `rs`  | `apps`,`extensions` | `true` | `ReplicaSet` | `[create delete deletecollection get list patch update watch]` |
 
-| Verb Description | kubectl command |
+| Verb Description | Kubectl Command |
 | ------------- | ------------- |
 | create | `kubectl create -f replicaset.yaml`|
 | List | `kubectl get rs` or `kubectl get replicaset` or `kubectl get replicasets` |
@@ -128,7 +128,7 @@ Master and Worker nodes ports
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `deployments`  | `deploy`  | `apps`,`extensions` | `true` | `Deployment` | `[create delete deletecollection get list patch update watch]` |
 
-| Verb Description | kubectl command |
+| Verb Description | Kubectl Command |
 | ------------- | ------------- |
 | Deployment Strategy Types | `Rolling-Update` or `Recreate` |
 | Create Deployment | `kubectl create deployment DEPLOYMENT_NAME --image=busybox` |
@@ -158,7 +158,7 @@ Master and Worker nodes ports
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `daemonsets`  | `ds`  | `apps`,`extensions` | `true` | `DaemonSet` | `[create delete deletecollection get list patch update watch]` |
 
-| Verb Description | kubectl command |
+| Verb Description | Kubectl Command |
 | ------------- | ------------- |
 | List daemonsets | `kubectl get ds` or `kubectl get daemonset` or `kubectl get daemonset` |
 | List daemonsets in all namespaces | `kubectl get ds --all-namespaces` or `kubectl get ds -A` |
@@ -172,7 +172,7 @@ Master and Worker nodes ports
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `jobs`  |  -   | `batch` | `true` | `Job` | `[create delete deletecollection get list patch update watch]` |
 
-| Verb Description | kubectl command |
+| Verb Description | Kubectl Command |
 | ------------- | ------------- |
 | Create | `kubectl create job my-job --image=busybox`|
 | Create a job with command | `kubectl create job my-job --image=busybox -- date` |
@@ -186,12 +186,11 @@ Master and Worker nodes ports
 
 
 ### [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
-
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `cronjobs`  | `cj`  | `batch` | `true` | `CronJob` | `[create delete deletecollection get list patch update watch]`
 
-| Verb Description | kubectl command |
+| Verb Description | Kubectl Command |
 | ------------- | ------------- |
 | Create with schedule | `kubectl create cronjob CRONJOB_NAME --image=busybox --schedule="*/1 * * * *"`|
 | List | `kubectl get cj` or `kubectl get cronjob` or `kubectl get cronjobs` |
@@ -201,7 +200,16 @@ Master and Worker nodes ports
 | Get particular cronjob | `kubectl get cj cronjob_NAME` |
 | Verbose Debug information/describe cronjob | `kubectl describe cj/CRRONJOB_NAME` |
 
-### Service
+### [Service](https://kubernetes.io/docs/concepts/services-networking/service/)
+| NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
+| ------------- | ------------- | ------- | -------- | --------- | -------- |
+| `services`  | `svc`  | `-` | `true` | `Service` | `[create delete get list patch update watch]`
+
+| Service Type | Description | Kubectl Command |
+| ------------ | ----------- | --------------- |
+| ClusterIP    | Create service | `kubectl create service clusterip my-cs --tcp=5678:8080` |
+|              | Create service in headless mode | `kubectl create service clusterip my-cs --clusterip="None"` |
+| | |
 
 
 
