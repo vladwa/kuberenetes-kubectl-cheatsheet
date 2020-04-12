@@ -117,13 +117,14 @@ Master and Worker nodes ports
 | Delete | `kubectl delete rs REPLICASET_NAME` or `kubectl delete -f replicaset.yaml`|
 | Get | `kubectl get rs REPLICASET_NAME` |
 
-### Deployment,Scale & Rolling Upgrades
+### Deployment,Scale & Rolling Updates
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `deployments`  | `deploy`  | `apps`,`extensions` | `true` | `Deployment` | `[create delete deletecollection get list patch update watch]` |
 
 | Verb Description | kubectl command |
 | ------------- | ------------- |
+| Deployment Strategy Types | `Rolling-Update` or `Recreate` |
 | Create Deployment | `kubectl create deployment DEPLOYMENT_NAME --image=busybox` |
 | Run deployment with 2 replicas | `kubectl run POD_NAME --image=nginx --replicas=2 --port=80`|
 | List deployments | `kubectl get deploy` or `kubectl get deployment` or `kubectl get deployments` |
@@ -191,6 +192,10 @@ Master and Worker nodes ports
 | Delete | `kubectl delete cj CRONJOB_NAME` or `kubectl delete -f cronjob.yaml`|
 | Get particular cronjob | `kubectl get cj cronjob_NAME` |
 | Verbose Debug information/describe cronjob | `kubectl describe cj/CRRONJOB_NAME` |
+
+### Service
+
+|
 
 
 
