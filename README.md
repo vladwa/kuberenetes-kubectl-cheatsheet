@@ -1,9 +1,9 @@
+#### cka-ckad-prep-notes
+
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/vinayakavladwa"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 
-#### cka-ckad-prep-notes
-
-### Kubernetes Components
+### [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components/)
 #### Control Plane Components (Master Nodes)
 | Component Name                    | Summary | Runs As | 
 |-------------------------|--------------------------------------------------------------------------------------------------------| ----------- | 
@@ -117,7 +117,8 @@ Master and Worker nodes ports
 | Delete | `kubectl delete rs REPLICASET_NAME` or `kubectl delete -f replicaset.yaml`|
 | Get | `kubectl get rs REPLICASET_NAME` |
 
-### Deployment,Scale & Rolling Updates
+### Deployments,Scale,Rolling Updates & Rollbacks
+
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `deployments`  | `deploy`  | `apps`,`extensions` | `true` | `Deployment` | `[create delete deletecollection get list patch update watch]` |
