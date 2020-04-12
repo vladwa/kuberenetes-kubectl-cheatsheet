@@ -22,7 +22,8 @@
 Master and Worker nodes ports 
 ![alt text](ports.png)
 
-### You can create the following resources using kubectl run with the --generator flag
+### [Generators] (https://kubernetes.io/docs/reference/kubectl/conventions/#generators)
+##You can create the following resources using kubectl run with the --generator flag
 
 | **Resource**  | **api group** | **kubectl command** |
 | -------------                          | ------------- | ------- |
@@ -67,9 +68,12 @@ Master and Worker nodes ports
 | Restart Kubelet | `service kubelet restart` or `systemctl restart kubelet.service` |
 | Stop Kubelet | `service kubelet stop` or `systemctl stop kubelet.service` |
 | Tail Kubelet logs | `journalctl -u kubelet.service -f` |
-| Check dockerd status | |
+| Check Docker daemon status | `service docker status` or `systemctl status docker.service`|
+| Restart Docker daemon | `service docker restart` or `systemctl restart docker.service` |
+| Stop Docker daemon | `service docker stop` or `systemctl stop docker.service` |
+| Tail Docker daemon logs | `journalctl -u dockerr.service -f` |
 
-### Pod 
+### [Pod] (https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod) 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `pods`  | `po`  | -  | `true` | `Pod` | `[create delete deletecollection get list patch update watch]` |
@@ -92,6 +96,7 @@ Master and Worker nodes ports
 | Tail pods logs (multi-container case) | `kubectl logs -f POD_NAME -c CONTAINER_NAME` | 
 | Delete pod | `kubectl delete pod POD_NAME` or `kubectl delete -f pod.yaml` or `kubectl delete pod/POD_NAME` |
 | Delete pod in particular namespace | `kubectl delete pod POD_NAME -n NAMESPACE` |
+| Delete pod forcefully | `kubectl delete pod my-pod --grace-period=0 --force` |
 | Get pod | `kubectl get pod POD_NAME` |
 | Watch pod | `kubectl get pod POD_NAME --watch` |
 | Patch pod | `kubectl patch pod valid-pod -p '{"spec":{"containers":[{"name":"kubernetes-serve-hostname"}]}}'` |
@@ -103,7 +108,9 @@ Master and Worker nodes ports
 | Exec to pod | `kubectl exec -it POD_NAME bash` |
 | List Kubernetes critical pods | `kubectl get pods -n kube-system` |
 
-### ReplicaSet 
+
+### [ReplicaSet] (https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) 
+
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `replicasets`  | `rs`  | `apps`,`extensions` | `true` | `ReplicaSet` | `[create delete deletecollection get list patch update watch]` |
@@ -117,7 +124,7 @@ Master and Worker nodes ports
 | Delete | `kubectl delete rs REPLICASET_NAME` or `kubectl delete -f replicaset.yaml`|
 | Get | `kubectl get rs REPLICASET_NAME` |
 
-### Deployments,Scale,Rolling Updates & Rollbacks
+### [Deployments,Scale,Rolling Updates & Rollbacks](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
@@ -147,7 +154,8 @@ Master and Worker nodes ports
 | Describe all deployments | `kubectl describe deployments` |
 | Watch deployment | `kubectl get deploy/DEPLOYMENT_NAME --watch` |
 
-### DaemonSet
+### [DaemonSet] (https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
+
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `daemonsets`  | `ds`  | `apps`,`extensions` | `true` | `DaemonSet` | `[create delete deletecollection get list patch update watch]` |
@@ -161,7 +169,8 @@ Master and Worker nodes ports
 | Get particular daemonset | `kubectl get ds DAEMONSET_NAME` |
 | Verbose Debug information/describe Daemonset | `kubectl describe ds/DAEMONSET_NAME` |
 
-### Job
+### [Jobs] (https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/)
+
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `jobs`  |  -   | `batch` | `true` | `Job` | `[create delete deletecollection get list patch update watch]` |
@@ -179,7 +188,8 @@ Master and Worker nodes ports
 | Verbose Debug information/describe job | `kubectl describe jobs/CRRONJOB_NAME` |
 
 
-### CronJob
+### [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
+
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `cronjobs`  | `cj`  | `batch` | `true` | `CronJob` | `[create delete deletecollection get list patch update watch]`
@@ -196,7 +206,6 @@ Master and Worker nodes ports
 
 ### Service
 
-|
 
 
 
