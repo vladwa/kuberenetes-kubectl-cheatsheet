@@ -22,8 +22,8 @@
 Master and Worker nodes ports 
 ![alt text](ports.png)
 
-### [Generators] (https://kubernetes.io/docs/reference/kubectl/conventions/#generators)
-##You can create the following resources using kubectl run with the --generator flag
+### [Generators](https://kubernetes.io/docs/reference/kubectl/conventions/#generators)
+**You can create the following resources using kubectl run with the --generator flag**
 
 | **Resource**  | **api group** | **kubectl command** |
 | -------------                          | ------------- | ------- |
@@ -73,7 +73,7 @@ Master and Worker nodes ports
 | Stop Docker daemon | `service docker stop` or `systemctl stop docker.service` |
 | Tail Docker daemon logs | `journalctl -u dockerr.service -f` |
 
-### [Pod] (https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod) 
+### [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod) 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `pods`  | `po`  | -  | `true` | `Pod` | `[create delete deletecollection get list patch update watch]` |
@@ -109,8 +109,7 @@ Master and Worker nodes ports
 | List Kubernetes critical pods | `kubectl get pods -n kube-system` |
 
 
-### [ReplicaSet] (https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) 
-
+### [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `replicasets`  | `rs`  | `apps`,`extensions` | `true` | `ReplicaSet` | `[create delete deletecollection get list patch update watch]` |
@@ -125,7 +124,6 @@ Master and Worker nodes ports
 | Get | `kubectl get rs REPLICASET_NAME` |
 
 ### [Deployments,Scale,Rolling Updates & Rollbacks](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
-
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `deployments`  | `deploy`  | `apps`,`extensions` | `true` | `Deployment` | `[create delete deletecollection get list patch update watch]` |
@@ -154,7 +152,7 @@ Master and Worker nodes ports
 | Describe all deployments | `kubectl describe deployments` |
 | Watch deployment | `kubectl get deploy/DEPLOYMENT_NAME --watch` |
 
-### [DaemonSet] (https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
+### [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
@@ -169,8 +167,7 @@ Master and Worker nodes ports
 | Get particular daemonset | `kubectl get ds DAEMONSET_NAME` |
 | Verbose Debug information/describe Daemonset | `kubectl describe ds/DAEMONSET_NAME` |
 
-### [Jobs] (https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/)
-
+### [Jobs](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/)
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
 | `jobs`  |  -   | `batch` | `true` | `Job` | `[create delete deletecollection get list patch update watch]` |
