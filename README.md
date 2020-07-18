@@ -71,7 +71,7 @@ Master and Worker nodes ports
 | Check Docker daemon status | `service docker status` or `systemctl status docker.service`|
 | Restart Docker daemon | `service docker restart` or `systemctl restart docker.service` |
 | Stop Docker daemon | `service docker stop` or `systemctl stop docker.service` |
-| Tail Docker daemon logs | `journalctl -u dockerr.service -f` |
+| Tail Docker daemon logs | `journalctl -u docker.service -f` |
 
 ### [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod) 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
@@ -209,7 +209,32 @@ Master and Worker nodes ports
 | ------------ | ----------- | --------------- |
 | ClusterIP    | Create service | `kubectl create service clusterip my-cs --tcp=5678:8080` |
 |              | Create service in headless mode | `kubectl create service clusterip my-cs --clusterip="None"` |
-| | |
+| ExternalName| Create an ExternalName service | `kubectl create service externalname my-ns --external-name example.com` |
+| LoadBalancer | Create a LoadBalancer service | `kubectl create service loadbalancer my-lbs --tcp=5678:8080` |
+| NodePort | Create a NodePort service | `kubectl create service nodeport my-ns --tcp=5678:8080` |
+
+| Verb Description | Kubectl Command |
+| ------------- | ------------- |
+| List | `kubectl get service` or `kubectl get svc`|
+| List in all namespaces | `kubectl get service --all-namespaces` or `kubectl get svc -A` |
+| List with more information | `kubectl get svc -owide` or `kubectl get service -owide` |
+| Delete | `kubectl delete svc SERVICE_NAME` or `kubectl delete -f service.yaml`|
+| Get particular service | `kubectl get service SERVICE_NAME` |
+| Verbose Debug information/describe service | `kubectl describe svc/SERVICE_NAME` |
+
+### [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+
+| NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
+| ------------- | ------------- | ------- | -------- | --------- | -------- |
+| `namespaces`  | `ns`  | `-` | `false` | `Namespace` | `[create delete get list patch update watch]`
+
+| Verb Description | Kubectl Command |
+| ------------- | ------------- |
+| List | `kubectl get namespaces` or `kubectl get ns`|
+| Create | `kubectl create ns TEST` |
+| Delete | `kubectl delete ns TEST` or `kubectl delete -f namespace.yaml`|
+| Get particular namespace | `kubectl get ns TEST` |
+| Verbose Debug information/describe service | `kubectl describe ns/TEST` |
 
 
 
