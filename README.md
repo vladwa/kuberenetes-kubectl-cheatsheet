@@ -236,6 +236,18 @@ Master and Worker nodes ports
 | Get particular namespace | `kubectl get ns TEST` |
 | Verbose Debug information/describe service | `kubectl describe ns/TEST` |
 
+### [Serviceaccounts](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/)
 
+| NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
+| ------------- | ------------- | ------- | -------- | --------- | -------- |
+| `serviceaccounts`  | `sa`  | `-` | `true` | `ServiceAccount` | `[create delete deletecollection get list patch update watch]`
+
+| Verb Description | Kubectl Command |
+| ------------- | ------------- |
+| List | `kubectl get sa`|
+| Create | `kubectl create serviceaccount my-service-account` |
+| Delete | `kubectl delete serviceaccount my-service-account` or `kubectl delete -f my-service-account.yaml` |
+| Get particular sa | `kubectl get sa my-service-account` |
+| Verbose Debug information/describe service | `kubectl describe sa/my-service-account` |
 
 
