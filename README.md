@@ -1,7 +1,7 @@
 #### cka-ckad-prep-notes
 
 <div id="the whole thing" style="overflow: hidden;">
-<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/vinayakavladwa"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/vinayakavladwa"><img src="https://github.com/vladwa/cka-ckad-prep-notes/blob/master/linkedin.png" alt="linkedin" /></a></div>
 
 ### [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components/)
 #### Control Plane Components (Master Nodes)
