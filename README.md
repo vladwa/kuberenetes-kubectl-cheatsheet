@@ -61,6 +61,12 @@ Master and Worker nodes ports
 | kubelet.service           | `/etc/systemd/system/kubelet.service` |
 | docker.service            | `/etc/systemd/system/docker.service` |
 
+### Check health of cluster
+| Description | command |
+| ----------- | ------- |
+| Check cluster health | `kubectl get componentstatus` |
+| Check etcd health | `kubectl get --raw=/healthz/etcd` |
+
 ### Kubelet and Docker commands 
 | Description | Command or File location|
 | ------------ | -------------- |
