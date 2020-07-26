@@ -1,4 +1,4 @@
-#### cka-ckad-prep-notes
+#### Kubernetes kubectl cheatsheet
 
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/vinayakavladwa"><img src="https://github.com/vladwa/cka-ckad-prep-notes/blob/master/linkedin.png" alt="linkedin" /></a></div>
