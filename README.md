@@ -94,14 +94,14 @@ Master and Worker nodes ports
 
 
 
-### Kubernetes cluster upgrade kubeadm way
+### [Kubernetes cluster upgrade kubeadm way] (https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
 | Description | Command |
 | ----------- | ------- |
 | Install kubeadm new version | `apt-get upgrade -y kubeadm=1.19.0-00` |
-| | `kubeadm upgarade plan v1.19.0` |
-| | `kubeadm upgrade apply v1.19.0` |
-| | `apt-get upgrade kubelet=1.19.0-00` |
-| | `kubeadm upgarde node config --kubelet-version v1.19.0` |
+| Upgrade plan | `kubeadm upgarade plan v1.19.0` |
+| Apply upgrade plan| `kubeadm upgrade apply v1.19.0` |
+| Update kubelet | `apt-get upgrade kubelet=1.19.0-00` |
+| Update kubelet configuration | `kubeadm upgarde node config --kubelet-version v1.19.0` |
 
 
 ### [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod) 
