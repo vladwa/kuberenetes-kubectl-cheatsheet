@@ -104,20 +104,12 @@ Master and Worker nodes ports
 | Update kubelet configuration | `kubeadm upgarde node config --kubelet-version v1.19.0` |
 | Restart kubelet | `systemctl restart kubelet` |
 
-|
 
 ### [ETCD Backup & Restore](https://github.com/mmumshad/kubernetes-the-hard-way/blob/master/practice-questions-answers/cluster-maintenance/backup-etcd/etcd-backup-and-restore.md)
 | Description | Command |
 | ----------- | ------- |
 | ETCD Backup | `ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert="/etc/kubernetes/pki/etcd/server.crt" --cert="/etc/kubernetes/pki/etcd/ca.crt" --key="/etc/kubernetes/pki/etcd/ca.key" snapshot save /tmp/snapshot-pre-boot.db` |
-| ETCD Restore | `ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt \
-     --name=master \
-     --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \
-     --data-dir /var/lib/etcd-from-backup \
-     --initial-cluster=master=https://127.0.0.1:2380 \
-     --initial-cluster-token etcd-cluster-1 \
-     --initial-advertise-peer-urls=https://127.0.0.1:2380 \
-     snapshot restore /tmp/snapshot-pre-boot.db` |
+| ETCD Restore | `ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --name=master --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key --data-dir /var/lib/etcd-from-backup --initial-cluster=master=https://127.0.0.1:2380 --initial-cluster-token etcd-cluster-1 --initial-advertise-peer-urls=https://127.0.0.1:2380 snapshot restore /tmp/snapshot-pre-boot.db` |
 
 ### [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod) 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
