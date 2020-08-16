@@ -288,4 +288,25 @@ Master and Worker nodes ports
 | Get particular sa | `kubectl get sa my-service-account` |
 | Verbose Debug information/describe service | `kubectl describe sa/my-service-account` |
 
+### [Node Maintenance](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/)
+| Description                                      | Command                       |
+|-------------------------------------------| -------------------------------|
+| Mark node as unschedulable                | `kubectl cordon $NODE_NAME`   |
+| Mark node as schedulable                  | `kubectl uncordon $NODE_NAME` |
+| Drain node in preparation for maintenance | `kubectl drain $NODE_NAME`    |
+| Drain node with grace period of 15 mins   | `kubectl drain $NODE_NAME --grace-period=900` |
+| Drain node forcefully | `kubectl drain $NODE_NAME --force` |
+| Ignore DaemonSet-managed pods while draining node | `kubectl drain $NODE_NAME --grace-period=900 --ignore-daemonsets=true` |
+
+### Events
+| Description                            | Command                                                    |
+|---------------------------------| ------------------------------------------------------------|
+| View all events                 | `kubectl get events --all-namespaces` or `kubectl get events -A`  |
+| List Events sorted by timestamp | `kubectl get events --sort-by=.metadata.creationTimestamp`   |
+| List Events only in kube-system namespace | `kubectl get events -n kube-system` |
+
+
+
+
+
 
