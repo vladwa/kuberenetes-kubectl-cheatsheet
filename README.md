@@ -87,6 +87,17 @@ Master and Worker nodes ports
 | View the routing table | `ip route` |
 | Add the entries to the routing table| `ip route add 192.168.1.0/24 via 192.168.2.1` |
 | Enable ipv4 forwarding | `echo 1 > /proc/sys/net/ipv4/ip_forward`|
+| Enable ipv6 forwarding | `echo 1 > /proc/sys/net/ipv6/ip_forward`| 
+| list network namespaces | `ip netns` |
+| Adding blue namespace | `ip netns add blue` |
+| Exec to the particular namesapce | `ip netns exec NAMESPACE_NAME ip link` or `ip -n red link` |
+
+
+
+### Kubernetes cluster upgrade kubeadm way
+| Description | Command |
+| ----------- | ------- |
+| Download kubeadm package 
 
 ### [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod) 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
