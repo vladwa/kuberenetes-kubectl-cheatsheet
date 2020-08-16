@@ -79,6 +79,15 @@ Master and Worker nodes ports
 | Stop Docker daemon | `service docker stop` or `systemctl stop docker.service` |
 | Tail Docker daemon logs | `journalctl -u docker.service -f` |
 
+### Kubernetes networking commands
+| Description | Command |
+| ----------- | ------- |
+| List interfaces on the host | `ip link` |
+| Lists IP address assigned to the interfaces | `ip addr` |
+| View the routing table | `ip route` |
+| Add the entries to the routing table| `ip route add 192.168.1.0/24 via 192.168.2.1` |
+| Enable ipv4 forwarding | `echo 1 > /proc/sys/net/ipv4/ip_forward`|
+
 ### [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/#what-is-a-pod) 
 | NAME  | SHORTNAMES | APIGROUP | NAMESPACED | KIND | VERBS |
 | ------------- | ------------- | ------- | -------- | --------- | -------- |
