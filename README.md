@@ -39,7 +39,7 @@ Master and Worker nodes ports
 | Description               | Folder or File location                                                                   |
 |-------------------------- | ---------------------------------------------------------------------------|
 | Config folder             | `/etc/kubernetes/`                                                        |
-| Manifests dif             | `/etc/kubernetes/manifests`                                               |
+| Manifests dir             | `/etc/kubernetes/manifests`                                               |
 | Certificate files         | `/etc/kubernetes/pki/`                                                   |
 | Credentials to API server | `/etc/kubernetes/kubelet.conf`                                            |
 | Superuser credentials     | `/etc/kubernetes/admin.conf`                                             |
@@ -201,7 +201,7 @@ Master and Worker nodes ports
 | List daemonsets | `kubectl get ds` or `kubectl get daemonset` or `kubectl get daemonset` |
 | List daemonsets in all namespaces | `kubectl get ds --all-namespaces` or `kubectl get ds -A` |
 | List daemonsets with more information | `kubectl get ds -owide`|
-| Delete | `kubectl delete rs DAEMONSET_NAME` or `kubectl delete -f daemonset.yaml`|
+| Delete | `kubectl delete ds DAEMONSET_NAME` or `kubectl delete -f daemonset.yaml`|
 | Get particular daemonset | `kubectl get ds DAEMONSET_NAME` |
 | Verbose Debug information/describe Daemonset | `kubectl describe ds/DAEMONSET_NAME` |
 
